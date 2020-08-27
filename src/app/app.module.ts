@@ -45,11 +45,11 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import {OverlayModule} from '@angular/cdk/overlay';
-import { ProjectListComponent } from './components/project-list/project-list.component';
+import { ProjectListComponent } from './views/project-list/project-list.component';
 import { RoutingModule } from './routing/routing.module';
-import { ViewProjectDoComponent } from './components/view-project-do/view-project-do.component';
-import { SidebarComponent } from './components/view-project-do/sidebar/sidebar.component';
-import { SprintBacklogComponent } from './components/view-project-do/sprint-backlog/sprint-backlog.component';
+import { ViewProjectDoComponent } from './views/view-project-do/view-project-do.component';
+import { SidebarComponent } from './views/view-project-do/sidebar/sidebar.component';
+import { SprintBacklogComponent } from './views/view-project-do/sprint-backlog/sprint-backlog.component';
 
 @NgModule({
   declarations: [

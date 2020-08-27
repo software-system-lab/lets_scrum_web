@@ -55,13 +55,13 @@ export class SprintBacklogComponent {
     {text: 'Drop Story', cols: 1, rows: 1, color:'lightblue', icon:'delete'},
     {text: 'Story History', cols: 1, rows: 1, color:'lightblue', icon:'history_edu'},
     {text: 'Add Task', cols: 1, rows: 1, color:'lightblue', icon:'add_box'},
-    {text: 'Add Existing Task', cols: 1, rows: 1, color:'lightblue', icon:'edit'},
-    {text: 'Move Story', cols: 1, rows: 1, color:'lightblue', icon:'edit'},
+    {text: 'Add Existing Task', cols: 1, rows: 1, color:'lightblue', icon:'note_add'},
+    {text: 'Move Story', cols: 1, rows: 1, color:'lightblue', icon:'double_arrow'},
   ];
 
   tasktiles: Tile[] = [
-    {text: 'Edit Task', cols: 1, rows: 1, color:'lightblue', icon:'add_box'},
-    {text: 'Drop Task', cols: 1, rows: 1, color:'lightblue', icon:'note_add'},
-    {text: 'Task History', cols: 1, rows: 1, color:'lightblue', icon:'wysiwyg'},
+    {text: 'Edit Task', cols: 1, rows: 1, color:'lightblue', icon:'edit'},
+    {text: 'Drop Task', cols: 1, rows: 1, color:'lightblue', icon:'delete'},
+    {text: 'Task History', cols: 1, rows: 1, color:'lightblue', icon:'history_edu'},
   ];
 }

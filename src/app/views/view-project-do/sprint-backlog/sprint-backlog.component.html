@@ -1,6 +1,6 @@
 
-<mat-grid-list cols="4" rowHeight="2:1">
-    <mat-grid-tile>
+<mat-grid-list cols="6" rowHeight="3:2">
+    <mat-grid-tile colspan=1>
         <mat-form-field appearance="fill">
             <mat-label>Sprint</mat-label>
             <mat-select [(value)] = "selected">
@@ -10,15 +10,15 @@
             </mat-select>
           </mat-form-field>
     </mat-grid-tile>
-    <mat-grid-tile class="SprintMatGrid">
+    <mat-grid-tile class="SprintMatGrid" colspan=2>
         <div class='internalMatGrid'>
-            <mat-grid-list cols="1" rowHeight="8:1">
+            <mat-grid-list cols="1" rowHeight="9:1">
                 <mat-grid-tile rowspan=1>
                     <h4>Sprint Backlog Action</h4>
                 </mat-grid-tile>
-                <mat-grid-tile rowspan=3>
+                <mat-grid-tile rowspan=2>
                     <div class='internalMatGrid button'>
-                        <mat-grid-list cols="3" rowHeight="2:1" class="grid">
+                        <mat-grid-list cols="3" rowHeight="3:1" class="grid">
                             <mat-grid-tile 
                                 *ngFor="let tile of tiles"
                                 [colspan]="tile.cols"
@@ -33,15 +33,15 @@
             </mat-grid-list>
         </div>
     </mat-grid-tile>
-    <mat-grid-tile>
+    <mat-grid-tile colspan=2>
         <div class='internalMatGrid'>
-            <mat-grid-list cols="1" rowHeight="8:1">
+            <mat-grid-list cols="1" rowHeight="9:1">
                 <mat-grid-tile rowspan=1>
                     <h4>Sprint Backlog Action</h4>
                 </mat-grid-tile>
-                <mat-grid-tile rowspan=3>
+                <mat-grid-tile rowspan=2>
                     <div class='internalMatGrid button'>
-                        <mat-grid-list cols="3" rowHeight="2:1" class="grid">
+                        <mat-grid-list cols="3" rowHeight="3:1" class="grid">
                             <mat-grid-tile 
                                 *ngFor="let storytile of storytiles"
                                 [colspan]="storytile.cols"
@@ -56,15 +56,15 @@
             </mat-grid-list>
         </div>
     </mat-grid-tile>
-    <mat-grid-tile>
+    <mat-grid-tile colspan=1>
         <div class='internalMatGrid'>
-            <mat-grid-list cols="1" rowHeight="8:1">
+            <mat-grid-list cols="1" rowHeight="9:2">
                 <mat-grid-tile rowspan=1>
                     <h4>Task Action</h4>
                 </mat-grid-tile>
-                <mat-grid-tile rowspan=3>
+                <mat-grid-tile rowspan=2>
                     <div class='internalMatGrid button'>
-                        <mat-grid-list cols="2" rowHeight="3:1" class="grid">
+                        <mat-grid-list cols="2" rowHeight="2:1" class="grid">
                             <mat-grid-tile 
                                 *ngFor="let tasktile of tasktiles"
                                 [colspan]="tasktile.cols"
