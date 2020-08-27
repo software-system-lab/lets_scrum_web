@@ -1,0 +1,129 @@
+
+<mat-grid-list cols="4" rowHeight="2:1">
+    <mat-grid-tile>
+        <mat-form-field appearance="fill">
+            <mat-label>Sprint</mat-label>
+            <mat-select [(value)] = "selected">
+              <mat-option *ngFor="let sprint of sprints" [value]="sprint.value">
+                {{sprint.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile class="SprintMatGrid">
+        <div class='internalMatGrid'>
+            <mat-grid-list cols="1" rowHeight="8:1">
+                <mat-grid-tile rowspan=1>
+                    <h4>Sprint Backlog Action</h4>
+                </mat-grid-tile>
+                <mat-grid-tile rowspan=3>
+                    <div class='internalMatGrid button'>
+                        <mat-grid-list cols="2" rowHeight="3:1" class="grid">
+                            <mat-grid-tile 
+                                *ngFor="let tile of tiles"
+                                [colspan]="tile.cols"
+                                [rowspan]="tile.rows"
+                                [style.background]="tile.color">
+                            <mat-icon aria-hidden="false">{{tile.icon}}</mat-icon>
+                            {{tile.text}}
+                            </mat-grid-tile>
+                        </mat-grid-list>
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <div class='internalMatGrid'>
+            <mat-grid-list cols="1" rowHeight="8:1">
+                <mat-grid-tile rowspan=1>
+                    <h4>Sprint Backlog Action</h4>
+                </mat-grid-tile>
+                <mat-grid-tile rowspan=3>
+                    <div class='internalMatGrid button'>
+                        <mat-grid-list cols="3" rowHeight="2:1" class="grid">
+                            <mat-grid-tile 
+                                *ngFor="let storytile of storytiles"
+                                [colspan]="storytile.cols"
+                                [rowspan]="storytile.rows"
+                                [style.background]="storytile.color">
+                            <mat-icon aria-hidden="false">{{storytile.icon}}</mat-icon>
+                            {{storytile.text}}
+                            </mat-grid-tile>
+                        </mat-grid-list>
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <div class='internalMatGrid'>
+            <mat-grid-list cols="1" rowHeight="8:1">
+                <mat-grid-tile rowspan=1>
+                    <h4>Task Action</h4>
+                </mat-grid-tile>
+                <mat-grid-tile rowspan=3>
+                    <div class='internalMatGrid button'>
+                        <mat-grid-list cols="2" rowHeight="3:1" class="grid">
+                            <mat-grid-tile 
+                                *ngFor="let tasktile of tasktiles"
+                                [colspan]="tasktile.cols"
+                                [rowspan]="tasktile.rows"
+                                [style.background]="tasktile.color">
+                            <mat-icon aria-hidden="false">{{tasktile.icon}}</mat-icon>
+                            {{tasktile.text}}
+                            </mat-grid-tile>
+                        </mat-grid-list>
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- ID Column -->
+    <ng-container matColumnDef="ID">
+      <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.ID}} </mat-cell>
+    </ng-container>
+
+    <!-- Tag Column -->
+    <ng-container matColumnDef="Tag">
+        <mat-header-cell *matHeaderCellDef> Tag </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.Tag}} </mat-cell>
+      </ng-container>
+
+    <!-- Name Column -->
+    <ng-container class="name-column" matColumnDef="Name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Name}} </mat-cell>
+    </ng-container>
+  
+    <!-- Importance Column -->
+    <ng-container matColumnDef="Importance">
+      <mat-header-cell *matHeaderCellDef> Importance </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Importance}} </mat-cell>
+    </ng-container>
+  
+    <!-- Estimate Column -->
+    <ng-container matColumnDef="Estimate">
+      <mat-header-cell *matHeaderCellDef> Estimate </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Estimate}} </mat-cell>
+    </ng-container>
+  
+    <!-- Handler Column -->
+    <ng-container matColumnDef="Handler">
+        <mat-header-cell *matHeaderCellDef> Handler </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.Handler}} </mat-cell>
+    </ng-container>
+
+    <!-- Status Column -->
+    <ng-container matColumnDef="Status">
+        <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.Status}} </mat-cell>
+      </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
