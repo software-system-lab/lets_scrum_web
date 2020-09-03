@@ -8,34 +8,5 @@ export class Task {
         public notes: string,
     ) { }
 
-    getName() {
-        return this.name;
-    }
-    getHandler() {
-        return this.handler;
-    }
-    getPartner() {
-        return this.partner;
-    }
-    getEstimate() {
-        return this.estimate;
-    }
-    getNotes() {
-        return this.notes;
-    }
-    setName(name:string) {
-        this.name = name;
-    }
-    setHandler(handler:string) {
-        this.handler = handler;
-    }
-    setPartner(partner:string) {
-        this.partner = partner;
-    }
-    setEstimate(estimate:number) {
-        this.estimate = estimate;
-    }
-    setNotes(notes:string) {
-        this.notes = notes;
-    }
+    
 }

@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SprintBacklogComponent } from './sprint-backlog.component';
+import { Stories } from '../../../core/service/mock-story';
 
 describe('SprintBacklogComponent', () => {
   let component: SprintBacklogComponent;
@@ -21,5 +22,9 @@ describe('SprintBacklogComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should get stories from service', () => {+
+    expect(component.Stories).toEqual(Stories);
   });
 });

@@ -1,5 +1,4 @@
-
-<mat-grid-list cols="6" rowHeight="3:2">
+<mat-grid-list cols="7" rowHeight="1:1">
     <mat-grid-tile colspan=1>
         <mat-form-field appearance="fill">
             <mat-label>Sprint</mat-label>
@@ -10,7 +9,7 @@
             </mat-select>
           </mat-form-field>
     </mat-grid-tile>
-    <mat-grid-tile class="SprintMatGrid" colspan=2>
+    <mat-grid-tile class="SprintMatGrid" colspan=3>
         <div class='internalMatGrid'>
             <mat-grid-list cols="1" rowHeight="9:1">
                 <mat-grid-tile rowspan=1>
@@ -33,7 +32,7 @@
             </mat-grid-list>
         </div>
     </mat-grid-tile>
-    <mat-grid-tile colspan=2>
+    <mat-grid-tile colspan=3>
         <div class='internalMatGrid'>
             <mat-grid-list cols="1" rowHeight="9:1">
                 <mat-grid-tile rowspan=1>
@@ -56,7 +55,7 @@
             </mat-grid-list>
         </div>
     </mat-grid-tile>
-    <mat-grid-tile colspan=1>
+    <!-- <mat-grid-tile colspan=1>
         <div class='internalMatGrid'>
             <mat-grid-list cols="1" rowHeight="9:2">
                 <mat-grid-tile rowspan=1>
@@ -64,7 +63,7 @@
                 </mat-grid-tile>
                 <mat-grid-tile rowspan=2>
                     <div class='internalMatGrid button'>
-                        <mat-grid-list cols="2" rowHeight="2:1" class="grid">
+                        <mat-grid-list cols="2" rowHeight="7:3" class="grid">
                             <mat-grid-tile 
                                 *ngFor="let tasktile of tasktiles"
                                 [colspan]="tasktile.cols"
@@ -78,52 +77,27 @@
                 </mat-grid-tile>
             </mat-grid-list>
         </div>
-    </mat-grid-tile>
+    </mat-grid-tile> -->
 </mat-grid-list>
 
-<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-    <!-- ID Column -->
-    <ng-container matColumnDef="ID">
-      <mat-header-cell *matHeaderCellDef> ID </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.ID}} </mat-cell>
-    </ng-container>
 
-    <!-- Tag Column -->
-    <ng-container matColumnDef="Tag">
-        <mat-header-cell *matHeaderCellDef> Tag </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.Tag}} </mat-cell>
-      </ng-container>
 
-    <!-- Name Column -->
-    <ng-container class="name-column" matColumnDef="Name">
-      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.Name}} </mat-cell>
-    </ng-container>
-  
-    <!-- Importance Column -->
-    <ng-container matColumnDef="Importance">
-      <mat-header-cell *matHeaderCellDef> Importance </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.Importance}} </mat-cell>
-    </ng-container>
-  
-    <!-- Estimate Column -->
-    <ng-container matColumnDef="Estimate">
-      <mat-header-cell *matHeaderCellDef> Estimate </mat-header-cell>
-      <mat-cell *matCellDef="let element"> {{element.Estimate}} </mat-cell>
-    </ng-container>
-  
-    <!-- Handler Column -->
-    <ng-container matColumnDef="Handler">
-        <mat-header-cell *matHeaderCellDef> Handler </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.Handler}} </mat-cell>
-    </ng-container>
+<div cdkDropList cdkDropListOrientation="horizontal" class="story-list" (cdkDropListDropped)="drop($event)">
+    <div class="story-box-label">
+        <div class="storyID">ID</div>
+        <div class="storyName">Name</div>
+        <div class="storyDetail">Estimate</div>
+        <div class="storyDetail">Importance</div>
+        <div class="storyDetail">Handler</div>
+        <div class="storyTag">Tag</div>
+    </div>
+    <div class="story-box" *ngFor="let story of Stories" cdkDrag>
+        <div class="storyID">{{story.ID}}</div>
+        <div class="storyName">{{story.name}}</div>
+        <div class="storyDetail">{{story.estimate}}</div>
+        <div class="storyDetail">{{story.importance}}</div>
+        <div class="storyDetail">{{story.handler}}</div>
+        <div class="storyTag">{{story.tag}}</div>
+    </div>
+</div>
 
-    <!-- Status Column -->
-    <ng-container matColumnDef="Status">
-        <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.Status}} </mat-cell>
-      </ng-container>
-
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-  </mat-table>
