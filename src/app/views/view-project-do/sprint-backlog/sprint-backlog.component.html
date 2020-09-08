@@ -1,4 +1,4 @@
-<mat-grid-list cols="7" rowHeight="1:1">
+<mat-grid-list cols="7" rowHeight="1:1" class="tool-bar">
     <mat-grid-tile colspan=1>
         <mat-form-field appearance="fill">
             <mat-label>Sprint</mat-label>
@@ -7,7 +7,7 @@
                 {{sprint.viewValue}}
               </mat-option>
             </mat-select>
-          </mat-form-field>
+        </mat-form-field>
     </mat-grid-tile>
     <mat-grid-tile class="SprintMatGrid" colspan=3>
         <div class='internalMatGrid'>
@@ -81,23 +81,23 @@
 </mat-grid-list>
 
 
+<mat-grid-list cols="3" class="story-list">
+    <mat-grid-tile 
+        *ngFor="let story of Stories"
+        [colspan]=1
+        [rowspan]=1>
+        <div class="story-box" (dblclick)="createEmptyStory()">
+            <div class="storyID">{{story.ID}}</div>
+            <div class="storyName">{{story.name}}</div>
+            <div class="storyEstimate">{{story.estimate}}</div>
+            <div class="storyImportance">{{story.importance}}</div>
+            <div class="storyTag"> # {{story.tag}}</div>
+        </div>
+    </mat-grid-tile>
+  </mat-grid-list>
 
-<div cdkDropList cdkDropListOrientation="horizontal" class="story-list" (cdkDropListDropped)="drop($event)">
-    <div class="story-box-label">
-        <div class="storyID">ID</div>
-        <div class="storyName">Name</div>
-        <div class="storyDetail">Estimate</div>
-        <div class="storyDetail">Importance</div>
-        <div class="storyDetail">Handler</div>
-        <div class="storyTag">Tag</div>
-    </div>
-    <div class="story-box" *ngFor="let story of Stories" cdkDrag>
-        <div class="storyID">{{story.ID}}</div>
-        <div class="storyName">{{story.name}}</div>
-        <div class="storyDetail">{{story.estimate}}</div>
-        <div class="storyDetail">{{story.importance}}</div>
-        <div class="storyDetail">{{story.handler}}</div>
-        <div class="storyTag">{{story.tag}}</div>
-    </div>
+ 
+<div class="row">
+    <button class="btn btn-primary" (click)="createEmptyStory()">Add Story</button>
 </div>
 

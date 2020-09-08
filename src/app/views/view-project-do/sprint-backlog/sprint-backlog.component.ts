@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
-import { CdkDragStart } from '@angular/cdk/drag-drop';
 import { Story } from '../../../core/entity/story';
 import { StoryService } from '../../../core/service/story.service';
 import { Task } from '../../../core/entity/task';
@@ -28,31 +26,35 @@ export interface Tile {
 
 export class SprintBacklogComponent {
 
-  constructor(private storyService: StoryService) {
+  constructor(private storyService: StoryService, private taskService: TaskService) {
     this.getStories();
+    this.getTasks();
   }  
-
-  displayedColumns: string[] = ['ID', 'Tag', 'Name', 'Importance', 'Estimate', 'Handler', 'Status'];
   
+  //----------------------------------------Stories
   Stories: Story[] ;
   private getStories() : void {
     this.Stories = this.storyService.getStory();
   }
 
-  drop(event: CdkDragDrop<string[]>) {
-    moveItemInArray(this.Stories, event.previousIndex, event.currentIndex);
+  createEmptyStory() : void {
+    this.Stories.push(this.storyService.createStory('', 0, 0, 0, '', []));
   }
 
-  public dragging: boolean;
-  public handleDragStart(event: CdkDragStart): void {
-    this.dragging = true;
+  
+
+  //-----------------------------------------Tasks
+  Tasks: Task[];
+  private getTasks() : void {
+    this.Tasks = this.taskService.getTask();
   }
+
+  createTask() : void {
+    this.Tasks.push(this.taskService.createTask('task0', 1, 'hello', 'world', 0, 'abc'));
+  }
+  //-----------------------------------------
 
   public handleClick(event: MouseEvent): void {
-    if (this.dragging) {
-      this.dragging = false;
-      return
-    }
     alert('clicked!');
   }
 
@@ -85,5 +87,7 @@ export class SprintBacklogComponent {
     {text: 'Drop Task', cols: 1, rows: 1, color:'lightblue', icon:'delete'},
     {text: 'Task History', cols: 1, rows: 1, color:'lightblue', icon:'history_edu'},
   ];
+
+  
 
 }
