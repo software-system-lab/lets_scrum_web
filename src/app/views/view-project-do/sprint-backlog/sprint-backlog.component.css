@@ -3,21 +3,17 @@
 mat-form-field  {
     font-size: small;
     max-width: 100px;
+    height: 50px;
 }
 
 .tool-bar
 {
-  background: lightblue;  
+  background: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: -12px 0;
 }
-
-mat-grid-tile h4{
-    margin-top: 5px;
-    font-size: large;
-    font-weight: 600;
-    text-align: center;
-    display: flex;
-}
-
 
 table {
     width: 100%;
@@ -35,9 +31,7 @@ table {
     width: 5% !important;
     overflow-wrap: break-word;
     word-wrap: break-word;
-  
     word-break: break-word;
-  
     -ms-hyphens: auto;
     -moz-hyphens: auto;
     -webkit-hyphens: auto;
@@ -91,81 +85,91 @@ table {
     padding-left : 20px;
     max-width: 100%;
     border: solid 1px #ccc;
-    min-height: 80%;
+    min-height: 100%;
     background: white;
-  }
+}
   
-  .story-box {
-    padding: 10px 20px;
-    background-color: white;
-    margin: 20px;
-    width: 350px !important;
-    height: 200px !important;
-    border: solid 1px #ccc;
-    color: rgba(0, 0, 0, 0.87);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    box-sizing: border-box;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  .example-box:last-child {
-    border: none;
-  }
-  
-  .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
-    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
-  }
+.story-box {
+  padding: 10px 20px;
+  background-color: white;
+  margin: 20px;
+  width: 350px ;
+  height: 200px ;
+  border: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 14px;
+}
 
-  .storyName {
-    font-size: medium;
-    height: 30%;
-  }
-  
-  .storyID {
-      height: 10%;
-  }
-  
-  .storyImportance {
-    position: absolute;
-    bottom: 100px;
-    left: 40px;
-    border-color:solid 2px rgb(26, 88, 143);
-    background: rgba(132, 198, 255, 0.527);
-    border-radius: 10px;
-    color: rgba(15, 15, 15, 0.74);
-    height: 10%;
-    padding: 4px;
-    text-align: center;
-    width: 30px;
-  }
+.example-box:last-child {
+  border: none;
+}
 
-  .storyEstimate {
-    position: absolute;
-    bottom: 100px;
-    left: 80px;
-    border-color:solid 2px rgb(26, 88, 143);
-    background: rgba(132, 198, 255, 0.527);
-    border-radius: 10px;
-    color: rgba(15, 15, 15, 0.74);
-    height: 10%;
-    padding: 4px;
-    text-align: center;
-    width: 30px;
-  }
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
 
-  .storyTag {
-    position: absolute;
-    bottom: 100px;
-    right: 40px;
-    border-color:solid 2px rgb(26, 88, 143);
-    background: rgba(132, 198, 255, 0.527);
-    border-radius: 10px;
-    color: rgba(15, 15, 15, 0.74);
-    height: 10%;
-    padding: 4px;
-    text-align: center;
-  }
+.storyName {
+  font-size: medium;
+  height: 70%;
+}
+
+.storyID {
+    height: 15%;
+}
+
+.left-side {
+  width:30%;
+  justify-content: space-around;
+  display: flex;
+  flex-direction: row;
+}
+
+.bottom {
+  width:100%;
+  justify-content: space-between;
+  display: flex;
+  flex-direction: row;
+}
+
+.storyDetail {
+  border-color:solid 2px rgb(26, 88, 143);
+  background: rgba(132, 198, 255, 0.527);
+  border-radius: 10px;
+  color: rgba(15, 15, 15, 0.74);
+  padding: 4px;
+  text-align: center;
+  min-width: 30px;
+}
+
+.storyTag {
+  border-color:solid 2px rgb(26, 88, 143);
+  background: rgba(132, 198, 255, 0.527);
+  border-radius: 10px;
+  color: rgba(15, 15, 15, 0.74);
+  padding: 4px;
+  text-align: center;
+}
+
+.add-button {
+  font-size: 60px;
+  background-color: rgb(3, 46, 95);
+  border-radius: 50%;
+  color: rgb(219, 239, 255);
+  cursor: pointer;
+  position: fixed;
+  z-index: 100;
+  left: 90%;
+  bottom: 10%;
+}
+
+
+.add-button:hover{
+  color: aliceblue;
+  background-color: rgb(7, 73, 150);
+}
 

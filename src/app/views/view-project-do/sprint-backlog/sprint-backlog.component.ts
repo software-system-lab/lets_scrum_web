@@ -40,9 +40,6 @@ export class SprintBacklogComponent {
   createEmptyStory() : void {
     this.Stories.push(this.storyService.createStory('', 0, 0, 0, '', []));
   }
-
-  
-
   //-----------------------------------------Tasks
   Tasks: Task[];
   private getTasks() : void {
@@ -66,19 +63,12 @@ export class SprintBacklogComponent {
   selected = 3;
 
   tiles: Tile[] = [
-    {text: 'Add Story', cols: 1, rows: 1, color:'lightblue', icon:'add_box'},
-    {text: 'Add Existing Story', cols: 1, rows: 1, color:'lightblue', icon:'note_add'},
     {text: 'Printable Stories', cols: 1, rows: 1, color:'lightblue', icon:'print'},
     {text: 'Sprint Information', cols: 1, rows: 1, color:'lightblue', icon:'wysiwyg'},
     {text: 'Edit Sprint', cols: 1, rows: 1, color:'lightblue', icon:'edit'},
   ];
 
   storytiles: Tile[] = [
-    {text: 'Edit Story', cols: 1, rows: 1, color:'lightblue', icon:'edit'},
-    {text: 'Drop Story', cols: 1, rows: 1, color:'lightblue', icon:'delete'},
-    {text: 'Story History', cols: 1, rows: 1, color:'lightblue', icon:'history_edu'},
-    {text: 'Add Task', cols: 1, rows: 1, color:'lightblue', icon:'add_box'},
-    {text: 'Add Existing Task', cols: 1, rows: 1, color:'lightblue', icon:'note_add'},
     {text: 'Move Story', cols: 1, rows: 1, color:'lightblue', icon:'double_arrow'},
   ];
 
@@ -87,7 +77,5 @@ export class SprintBacklogComponent {
     {text: 'Drop Task', cols: 1, rows: 1, color:'lightblue', icon:'delete'},
     {text: 'Task History', cols: 1, rows: 1, color:'lightblue', icon:'history_edu'},
   ];
-
-  
 
 }
