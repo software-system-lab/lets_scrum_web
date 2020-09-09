@@ -1,10 +1,10 @@
 export class Story {
-    public name: string;
-    public ID: number;
-    public estimate: number;
-    public importance: number;
-    public status: string;
-    public tag: string[];
+    private name: string;
+    private ID: number;
+    private estimate: number;
+    private importance: number;
+    private status: string;
+    private tag: string[];
     constructor(name: string, ID: number, esimate: number, importance: number, status: string, tag: string[])
     { 
         this.name = name;
@@ -14,4 +14,41 @@ export class Story {
         this.status = status;
         this.tag = tag;
     }
+
+    getName(): string {
+        return this.name;
+    }
+
+    getID(): number {
+        return this.ID;
+    }
+
+    getEstimate(): number {
+        return this.estimate;
+    }
+
+    getImportance(): number {
+        return this.importance;
+    }
+
+    getStatus(): string {
+        return this.status;
+    }
+
+    getTag(): string[] {
+        return this.tag;
+    }
+
+    setName(name:string) {
+        this.name = name;
+    }
+
+    setEstimate(estimate:number) {
+        this.estimate = estimate;
+    }
+
+    setImportance(importance:number) {
+        this.importance = importance;
+    } 
+
 }

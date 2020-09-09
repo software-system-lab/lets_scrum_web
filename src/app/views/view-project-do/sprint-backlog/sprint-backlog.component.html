@@ -2,9 +2,9 @@
     <mat-grid-tile colspan=1>
         <mat-form-field appearance="fill">
             <mat-label>Sprint</mat-label>
-            <mat-select [(value)] = "selected">
-              <mat-option *ngFor="let sprint of sprints" [value]="sprint.value">
-                {{sprint.viewValue}}
+            <mat-select >
+              <mat-option *ngFor="let sprint of getSprintList()" [value]="sprint.ID">
+                Sprint #{{sprint.ID}}
               </mat-option>
             </mat-select>
         </mat-form-field>
@@ -76,7 +76,7 @@
 
 <mat-grid-list cols="3" class="story-list">
     <mat-grid-tile 
-        *ngFor="let story of Stories"
+        *ngFor="let story of getStoryList()"
         [colspan]=1
         [rowspan]=1>
         <div class="story-box">
@@ -94,4 +94,5 @@
    
 </mat-grid-list>
  
-<span class="add-button material-icons" aria-hidden="false" (click)="createEmptyStory()">add_circle</span>
+<!-- <span class="add-button material-icons" aria-hidden="false" (click)="createEmptyStory()">add_circle</span> -->
+<!-- <span (click)="deleteStory()">delete</span> -->
