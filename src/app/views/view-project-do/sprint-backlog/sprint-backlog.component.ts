@@ -19,7 +19,6 @@ export interface Tile {
   styleUrls: ['./sprint-backlog.component.css']
 })
 
-
 export class SprintBacklogComponent {
   private sprintBacklogService:SprintBacklogService;
   constructor(  sprintBacklogService:SprintBacklogService ) {
@@ -28,38 +27,45 @@ export class SprintBacklogComponent {
   }  
   
   //----------------------------------------Sprints
-  getSprintList(): Sprint[] {
-    return this.sprintBacklogService.getSprintList();
-  }
+
   /**
    * to show the sprintlist
    * 
    * return (Sprint[])
    * member of SprintBacklogComponent 
   **/
+  getSprintList(): Sprint[] {
+    return this.sprintBacklogService.getSprintList();
+  }
 
 
   //----------------------------------------Stories
+
   // Stories: Story[] ;
 
-  getStoryList(): Story[] {
-    return this.sprintBacklogService.getStoryList();
-  }
   /**
    * to show the storylist
    * 
    * return (Story[])
    * member of SprintBacklogComponent 
-  **/
-  
+   **/
+  getStoryList(): Story[] {
+    return this.sprintBacklogService.getStoryList();
+  }
 
-  // deleteStory(index: number): void{
-  //   this.Stories.splice(index, 1);
-  // }
-  //-----------------------------------------Tasks
-  Tasks: Task[];
-  
-  //-----------------------------------------
+  /**
+   * create empty story
+   * 
+   * void
+   * member of SprintBacklogComponent
+   **/
+  createEmptyStory(): void {
+    this.sprintBacklogService.addStory()
+  }
+
+  deleteStory(index: number): void{
+    this.sprintBacklogService.deleteStory(index);
+  }
 
   public handleClick(event: MouseEvent): void {
     alert('clicked!');

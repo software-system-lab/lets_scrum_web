@@ -1,3 +1,5 @@
+import { Task } from './task';
+
 export class Story {
     private name: string;
     private ID: number;
@@ -5,7 +7,8 @@ export class Story {
     private importance: number;
     private status: string;
     private tag: string[];
-    constructor(name: string, ID: number, esimate: number, importance: number, status: string, tag: string[])
+    private tasks: Task[];
+    constructor(name: string, ID: number, esimate: number, importance: number, status: string, tag: string[], tasks: Task[])
     { 
         this.name = name;
         this.ID = ID;
@@ -13,6 +16,7 @@ export class Story {
         this.importance = importance;
         this.status = status;
         this.tag = tag;
+        this.tasks = tasks;
     }
 
     getName(): string {
@@ -37,6 +41,10 @@ export class Story {
 
     getTag(): string[] {
         return this.tag;
+    }
+
+    getTasks(): Task[] {
+        return this.tasks;
     }
 
     setName(name:string) {

@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SprintBacklogComponent } from './sprint-backlog.component';
-import { Stories, newStory } from '../../../core/service/mock-story';
+import { Stories, newStory, emptyStory } from '../../../core/service/mock-story';
 import { newTask } from '../../../core/service/mock-task'; 
 
 describe('SprintBacklogComponent', () => {
@@ -25,18 +25,14 @@ describe('SprintBacklogComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // it('should get stories from service', () => {
-  //   expect(component.Stories).toEqual(Stories);
-  // });
+  it('should get stories from service', () => {
+    expect(component.getStoryList()).toEqual(Stories);
+  });
 
-  // it('should create new story', () => {
-  //   expect(component.Stories).toContain(newStory);
-  // });
+  it('should create a new empty story and show on the list', () => {
+    component.createEmptyStory();
+    
 
-  // it('should create new task', () => {
-  //   expect(component.Tasks).toContain(newTask);
-  // });
+  });
 
-  // it('tasks should be edited with right value', () => {
-  // });
 });

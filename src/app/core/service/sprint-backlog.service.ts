@@ -24,12 +24,16 @@ export class SprintBacklogService {
     return this.storyList;
   }
 
-  getMockData() {
+  getMockData() : void {
     this.sprintList = Sprints;
     this.storyList = Stories;
   }
 
-  addStory() {
-    this.storyList.push(new Story('',0,0,0,'',[]));
+  addStory() : void {
+    this.storyList.push(new Story('',0,0,0,'',[],[]));
+  }
+
+  deleteStory(index : number) : void {
+    this.storyList.splice(index, 1);
   }
 }

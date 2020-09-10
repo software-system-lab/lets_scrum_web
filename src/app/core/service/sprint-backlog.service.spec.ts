@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { Stories } from './mock-story';
+import { Stories, emptyStory } from './mock-story';
 
 import { SprintBacklogService } from './sprint-backlog.service';
 
@@ -9,6 +9,7 @@ describe('SprintBacklogService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({});
     service = TestBed.inject(SprintBacklogService);
+    service.getMockData();
   });
 
   it('should be created', () => {
@@ -19,4 +20,17 @@ describe('SprintBacklogService', () => {
     service.getMockData();
     expect(service.getStoryList()).toEqual(Stories);
   });
+
+  it('should create a new story',()=>{
+    service.addStory();
+    expect(service.getStoryList()).toContain(emptyStory);
+  });
+
+  it('should delete a story',()=>{
+    let storyLength = service.getStoryList().length;
+    service.deleteStory(storyLength-1);
+    expect(service.getStoryList().length).toEqual(storyLength-1);
+  });
+
+  
 });
