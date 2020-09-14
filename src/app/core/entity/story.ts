@@ -8,6 +8,7 @@ export class Story {
     private status: string;
     private tag: string[];
     private tasks: Task[];
+    
     constructor(name: string, ID: number, esimate: number, importance: number, status: string, tag: string[], tasks: Task[])
     { 
         this.name = name;

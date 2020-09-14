@@ -5,6 +5,7 @@ export class Task {
     public partner: string;
     public estimate: number;
     public notes: string;
+    
     constructor( name: string, ID: number, handler: string, partner: string, estimate: number, notes: string )
     {
         this.name = name;

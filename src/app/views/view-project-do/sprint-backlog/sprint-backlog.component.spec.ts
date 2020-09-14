@@ -1,5 +1,4 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SprintBacklogComponent } from './sprint-backlog.component';
 import { Stories, newStory, emptyStory } from '../../../core/service/mock-story';
 import { newTask } from '../../../core/service/mock-task'; 
@@ -27,12 +26,6 @@ describe('SprintBacklogComponent', () => {
 
   it('should get stories from service', () => {
     expect(component.getStoryList()).toEqual(Stories);
-  });
-
-  it('should create a new empty story and show on the list', () => {
-    component.createEmptyStory();
-    
-
   });
 
 });

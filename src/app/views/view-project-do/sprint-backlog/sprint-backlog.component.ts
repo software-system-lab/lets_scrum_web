@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Sprint } from '../../../core/entity/sprint';
 import { Story } from '../../../core/entity/story';
 import { Task } from '../../../core/entity/task';
-
 import { SprintBacklogService } from '../../../core/service/sprint-backlog.service';
 
 export interface Tile {
@@ -38,7 +37,6 @@ export class SprintBacklogComponent {
   getSprintList(): Sprint[] {
     return this.sprintBacklogService.getSprintList();
   }
-
 
   //----------------------------------------Stories
 
@@ -90,7 +88,6 @@ export class SprintBacklogComponent {
   public handleClick(event: MouseEvent): void {
     alert('clicked!');
   }
-
 
   tiles: Tile[] = [
     {text: 'Printable Stories', cols: 1, rows: 1, color:'lightblue', icon:'print'},

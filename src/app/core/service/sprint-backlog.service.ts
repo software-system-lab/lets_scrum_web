@@ -8,8 +8,8 @@ import { Stories } from './mock-story';
 @Injectable({
   providedIn: 'root'
 })
-export class SprintBacklogService {
 
+export class SprintBacklogService {
   private sprintList: Sprint[];
   private storyList: Story[];
 
@@ -48,9 +48,5 @@ export class SprintBacklogService {
   editStoryEstimate(index : number, estimate : number) : void {
     this.storyList[index].setEstimate(estimate);
   }
-
-  // editStoryTags(index : number, tags : string[]) : void {
-  //   this.storyList[index].setTags (tags);
-  // }
 
 }

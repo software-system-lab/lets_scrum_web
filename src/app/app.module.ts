@@ -51,10 +51,7 @@ import { ViewProjectDoComponent } from './views/view-project-do/view-project-do.
 import { SidebarComponent } from './views/view-project-do/sidebar/sidebar.component';
 import { SprintBacklogComponent } from './views/view-project-do/sprint-backlog/sprint-backlog.component';
 import { CommonModule } from '@angular/common';
-
 import { FormsModule } from "@angular/forms";
-import { IgxTreeGridModule } from 'igniteui-angular';
-
 
 @NgModule({
   declarations: [
@@ -113,7 +110,6 @@ import { IgxTreeGridModule } from 'igniteui-angular';
     ScrollingModule,
     RoutingModule,
     CommonModule,
-    IgxTreeGridModule,
     FormsModule,
   ],
 

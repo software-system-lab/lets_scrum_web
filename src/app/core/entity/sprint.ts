@@ -9,6 +9,7 @@ export class Sprint {
     public endDate: string;
     public duration: number;
     public teamMember: string[]; //type may change
+    
     constructor(ID: number, sprintGoal: string, stories: Story[], startDate: string, endDate: string, duration: number, teamMember: string[])
     {
         this.ID = ID;
