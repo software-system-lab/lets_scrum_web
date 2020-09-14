@@ -36,4 +36,21 @@ export class SprintBacklogService {
   deleteStory(index : number) : void {
     this.storyList.splice(index, 1);
   }
+
+  editStoryName(index : number, name : string) : void {
+    this.storyList[index].setName(name);
+  }
+
+  editStoryImportance(index : number, importance : number) : void {
+    this.storyList[index].setImportance(importance);
+  }
+
+  editStoryEstimate(index : number, estimate : number) : void {
+    this.storyList[index].setEstimate(estimate);
+  }
+
+  // editStoryTags(index : number, tags : string[]) : void {
+  //   this.storyList[index].setTags (tags);
+  // }
+
 }

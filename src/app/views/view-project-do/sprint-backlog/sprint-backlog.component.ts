@@ -21,6 +21,7 @@ export interface Tile {
 
 export class SprintBacklogComponent {
   private sprintBacklogService:SprintBacklogService;
+  private matSprintBacklogTimer:any;
   constructor(  sprintBacklogService:SprintBacklogService ) {
     this.sprintBacklogService = sprintBacklogService;
     this.sprintBacklogService.getMockData();
@@ -65,6 +66,25 @@ export class SprintBacklogComponent {
 
   deleteStory(index: number): void{
     this.sprintBacklogService.deleteStory(index);
+  }
+
+  click() : void {
+    if(!this.matSprintBacklogTimer) return;
+    console.log('click');
+  }
+
+  dblclick() : void {
+    console.log('dblclick');
+  }
+
+  triggerClick() : void {
+    this.matSprintBacklogTimer = setTimeout(() => {this.click()}, 250);
+  }
+
+  triggerDBLClick(i : number) : void {
+    clearTimeout(this.matSprintBacklogTimer);
+    this.matSprintBacklogTimer = undefined;
+    this.dblclick();
   }
 
   public handleClick(event: MouseEvent): void {

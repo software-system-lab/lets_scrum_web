@@ -5,7 +5,7 @@ let Stories: Story[] = [
 
   new Story
   (
-    'To manage sprint backlog, as a product owner, I want to have a sprint backlog page.', 1, 99, 0, "new", ['LetsScrum'],
+    'To manage sprint backlog, as a product owner, I want to have a sprint backlog page.', 1, 99, 0, "new", ['LetsScrum','hellllo'],
     [
       new Task('Task1',1,'handler','partner',1,''),
       new Task('Task2',2,'handler','partner',1,''),

@@ -47,16 +47,15 @@ export class Story {
         return this.tasks;
     }
 
-    setName(name:string) {
+    setName(name : string) {
         this.name = name;
     }
 
-    setEstimate(estimate:number) {
+    setEstimate(estimate : number) {
         this.estimate = estimate;
     }
 
-    setImportance(importance:number) {
+    setImportance(importance : number) {
         this.importance = importance;
     } 
-
 }
