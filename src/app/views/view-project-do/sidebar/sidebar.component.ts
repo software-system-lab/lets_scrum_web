@@ -23,8 +23,6 @@ const TREE_DATA: MenuNode[] = [
       {name: 'Sprint Plan'},
       {name: 'Sprint Backlog'},
       {name: 'TaskBoard'},
-      {name: 'Retrospective'},
-      {name: 'Unplanned'},
       {name: 'Scrum Report'},
     ]
   },

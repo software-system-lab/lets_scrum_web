@@ -1,0 +1,76 @@
+<mat-grid-list cols="7" rowHeight="2:1" class="tool-bar">
+    <mat-grid-tile colspan=1>
+        <mat-form-field appearance="fill">
+            <mat-label>Sprint</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let sprint of getSprintList()" [value]="sprint.ID">
+                Sprint #{{sprint.ID}}
+              </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile colspan=3>
+        <div class='internal-mat-grid'>
+            <mat-grid-list cols="1" rowHeight="5:1">
+                <mat-grid-tile rowspan=1>
+                    <div class='internal-mat-grid button'>
+                        <mat-grid-list cols="3" rowHeight="3:1" class="grid">
+                            <mat-grid-tile 
+                                *ngFor="let tile of tiles"
+                                [colspan]="tile.cols"
+                                [rowspan]="tile.rows"
+                                [style.background]="tile.color">
+                            <mat-icon aria-hidden="false">{{tile.icon}}</mat-icon>
+                            {{tile.text}}
+                            </mat-grid-tile>
+                        </mat-grid-list>
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile colspan=3>
+        <div class='internal-mat-grid'>
+            <mat-grid-list cols="1" rowHeight="5:1">
+                <mat-grid-tile rowspan=1>
+                    <div class='internal-mat-grid button'>
+                        <mat-grid-list cols="3" rowHeight="3:1" class="grid">
+                            <mat-grid-tile 
+                                *ngFor="let storytile of storytiles"
+                                [colspan]="storytile.cols"
+                                [rowspan]="storytile.rows"
+                                [style.background]="storytile.color">
+                            <mat-icon aria-hidden="false">{{storytile.icon}}</mat-icon>
+                            {{storytile.text}}
+                            </mat-grid-tile>
+                        </mat-grid-list>
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list cols="3" class="story-list">
+    <mat-grid-tile 
+        *ngFor="let story of getStoryList();let i = index"
+        [colspan]=1
+        [rowspan]=1>
+        <div class="story-box" (click)="triggerClick()" (dblclick)="triggerDBLClick()">
+            <div class="top">
+                <div></div>
+                <span class="material-icons" (click)="deleteStory(i)">delete_outline</span>
+            </div>
+            <div class="story-name">{{story.name}}</div>
+            <div class="bottom">
+                <div class="left-side">
+                    <div class="story-detail">{{story.estimate}}</div>
+                    <div class="story-detail">{{story.importance}}</div>
+                </div>
+                <div class="story-tag"> # {{story.tag}}</div>
+            </div>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
+ 
+<span class="add-button material-icons" aria-hidden="false" (click)="createEmptyStory()">add_circle</span>
